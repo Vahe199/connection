@@ -12,5 +12,7 @@ export const authReducer = (state = initialState, {type, payload}) => {
         isLoggedIn: payload,
       };
     }
+    default:
+      return state;
   }
 };

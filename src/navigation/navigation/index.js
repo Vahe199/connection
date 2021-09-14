@@ -1,11 +1,14 @@
+import React from 'react';
 import {useSelector} from 'react-redux';
-import {PublicNavigation} from './PublicNavigation';
 import {createStackNavigator} from '@react-navigation/stack';
+import {PublicNavigation} from './PublicNavigation';
+import {PrivateNavigation} from './PrivateNavigation';
 
 const Stack = createStackNavigator();
 
-const Navigation = () => {
-  const isLoggedIn = useSelector(({auth}) => auth.isLoggedIn);
+export const Navigation = () => {
+  const {isLoggedIn} = useSelector(({auth}) => auth);
+
   return (
     <Stack.Navigator>
       {isLoggedIn ? (
